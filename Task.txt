@@ -1,0 +1,35 @@
+Your task here is to implement a Java code based on the following specifications. Note that your code
+should match the specifications in a precise manner. Consider default visibility of classes, data fields and
+methods unless mentioned otherwise.
+
+class definitions:
+class TransactionParty:
+	Variables:
+		String seller
+		String buyer
+	Implement a Constructor using the class variables.
+
+class Receipt:
+	Variables:
+		TransactionParty transactionParty
+		String productsQR
+	Implement a Constructor using the class variables.
+
+class GenerateReceipt:
+	method definitions:
+	
+	calcGST(Receipt r): extract the rate and quantity of the products from input string and calculate GST @12%
+	Return type: String
+	Visibility: public
+
+In this method, you have to use the productsQR variable of the Receipt r object to extract the Quantity and Rate of 3 products.
+
+The variable productsQR will have a string value of the format <Rate>,<Quantity>@<Rate>,<Quantity>@<Rate>,<Quantity>
+
+Rate is the price rate of the product
+Quantity is the number of units bought
+	e.g: productsQR = "250,10@100,3@50,7" has the Rate as 250, 100 and 50 while Quantity as 10, 3 and 7 respectively.
+
+Use the GST_Rate as 12%.
+Calculate the value of GST using the formula:
+	GST = (Rate1 * Quantity1 + Rate2 * Quantity2 + Rate3 * Quantity3) * GST_Rate

@@ -1,0 +1,46 @@
+Given a string k consisting of lowercase letters, these letters form consecutive groups of the same
+character. For example, a string like K = "abbxxxxzyy" has the groups "a", "bb", "xxxx", "z" and "yy".
+A group is called large if it has 3 or more characters. Your task is to return the starting and ending positions of every large group.
+
+Implement a Java code based on the following specifications. Note that your code should match the specifications in a precise manner. Consider default visibility of classes, data fields and methods unless mentioned otherwise.
+
+Specifications:
+
+class Source:
+method definitons:
+ printPositions(String K): Method to return the starting and ending positions of every large group.
+ return type: List<List<Integer>>
+ visibilty: public
+ 
+addAfter(ArrayList<String> a, String m, String n): Method to add string n at the position next to the position of string element m in the list.
+ return type: ArrayList<String>
+ visibility: public
+
+Task:
+Create a Source class and implement below given method:
+
+- printPositions(String K): Method to return the starting and ending positions of every large group.
+- addAfter(ArrayList<String> a, String m, String n): Method to add string n at the position next to the position of string element m in the list.(Hint: Add n after every occurrence of m in a)
+
+Algorithm:
+
+printPositions(String K):
+- Maintain pointers i, j with i <= j. The i pointer will represent the start of the current group, and we will increment j forward until it reaches the end of the group.
+- We know that we have reached the end of the group when j is at the end of the string, or S[j] != S[j 1]. At this point, we have some group [i, j]; and after, we will update i = j+1, the start of the next group.
+
+
+Sample Input:
+mousssssseeee
+ArrayList<String> list = new ArrayList<>();
+list.add("ad");
+list.add("cc");
+list.add("df");
+list.add("ez");
+m = cc, n = kc;
+
+Sample Output:
+[[3, 8], [9, 12]]
+[ad, cc, kc, df, ez]
+
+Explanation:
+- In the above example the string "kc" denoted by string n is placed at position next to position of string "cc" denoted by string m.
